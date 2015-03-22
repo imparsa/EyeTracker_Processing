@@ -150,21 +150,32 @@ void draw() {
     println("sudX:  "+sudX);
   }
   if(monitorSwitch==5){
-    if (posizione == 0){
+
+   if (posizione == 0){
       println("Posizione : SINISTRA");
+    }    
+    if (posizione == 1){
+      println("Posizione : CENTRO");
+    }    
+    if (posizione == 2){
+      println("Posizione : DESTRA");
+    }
+    
+  }
+   
+   
+ if (posizione == 0){
       myPort.write('s');              // send an H to indicate mouse is over square
 
     }    
     if (posizione == 1){
-      println("Posizione : CENTRO");
       myPort.write('c');              // send an H to indicate mouse is over square
     }    
     if (posizione == 2){
-      println("Posizione : DESTRA");
       myPort.write('d');              // send an H to indicate mouse is over square
     }
-  }
-   
+    
+    
   horizontalScan(1,-1);       //1° quadrante
   horizontalScan(1,1);        //2° quadrante
   horizontalScan(-1,1);       //3° quadrante
